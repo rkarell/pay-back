@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 import json
+from app.transactions import Transactions
+from app.debts import Debts
 
 @ensure_csrf_cookie
 def index(request):
@@ -9,8 +11,17 @@ def index(request):
 
 def solve(request):
     jsonData = json.loads(request.body)
+    transactions = Transactions()
+    error = transactions.load(jsonData["transactions"])
+    if error is None:
+        debts = Debts()
+        debts.addTransactions(transactions)
+        debts.reduce()
+        result = str(debts)
+    else:
+        result = error
+
     data = {
-        'debts':jsonData["transactions"] + "2"
-    }
-    print(jsonData)
+            'debts':result
+        }
     return JsonResponse(data)
