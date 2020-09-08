@@ -16,7 +16,8 @@ def solve(request):
     if error is None:
         debts = Debts()
         debts.addTransactions(transactions)
-        debts.reduce()
+        debts.optimizeAlgorithm1()
+        debts.optimizeAlgorithm2()
         result = str(debts)
     else:
         result = error
