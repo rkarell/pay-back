@@ -16,5 +16,5 @@ Including another URLconf
 from django.urls import include, path
 
 urlpatterns = [
-    path('app/', include('app.urls')),
+    path('payback/', include('app.urls')),
 ]
