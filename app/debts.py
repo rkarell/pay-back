@@ -85,7 +85,7 @@ class Debts(object):
                         for creditor in creditorPair:
                             debts.append(self.getDebt(debtor, creditor))
                     smallestDebt = sorted(debts, key=lambda x: x.amount)[0]
-                    d1 = smallestDebt.debtFrom                  #d1, d2, c1, c2 are the same as in planning image
+                    d1 = smallestDebt.debtFrom                  #d1, d2, c1, c2 are the same as in media/algorithms.png
                     d2 = debtorPair[not debtorPair.index(d1)]   #'not' here gives the other index (0->1 or 1->0)
                     c1 = smallestDebt.debtTo
                     c2 = creditorPair[not creditorPair.index(c1)]

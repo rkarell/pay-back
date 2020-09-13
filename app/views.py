@@ -7,7 +7,7 @@ from app.debts import Debts
 
 @ensure_csrf_cookie
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'app/index.html')
 
 def solve(request):
     jsonData = json.loads(request.body)
