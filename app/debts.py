@@ -4,7 +4,7 @@ class Debts(object):
         self.participants = []
 
     def addTransactions(self, transactions):
-        for transaction in transactions.all:
+        for transaction in transactions.transactions:
             self.addParticipant(transaction.buyer)
             for participant in transaction.participants:
                 self.addParticipant(participant)
@@ -100,7 +100,7 @@ class Debts(object):
         creditorPairs1 = self.getPairs(self.getCreditors(debts1))
         creditorPairs2 = self.getPairs(self.getCreditors(debts2))
         for cp in creditorPairs1:
-            if cp in creditorPairs2:
+            if cp in creditorPairs2 or self.swapPair(cp) in creditorPairs2:
                 return(cp)
         return(None)
 
@@ -120,6 +120,9 @@ class Debts(object):
                 pairs.append([list[i],list[j]])
 
         return(pairs)
+
+    def swapPair(self, pair):
+        return [pair[1], pair[0]]
 
     def __str__(self):
         return '\n'.join(map(str, self.debts))
