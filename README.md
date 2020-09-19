@@ -1,10 +1,10 @@
 # PayBack
 A web application to optimize the transactions when paying back debts.
 
-Consider a case where a group of people has purchased multiple things. Different people buy different things and the amount of participants of each purchase vary. When the time comes to even out the debts, how should the transactions be done to minimize them?
+## Background
+There are tons of applications to help share bills. I started to wonder the algorithms used to optimize this problem and wanted to take my shot at the case.
 
-## Status
-This application was built to test the designed optimization algorithms. It was modified into a web application for demonstration purposes. It lacks a proper user interface, which reflects my current interests: back end.
+Originally, I created an app to just test the designed algorithms but ended up turning it into a web application for demonstration purposes. It lacks a proper user interface, which reflects my current interests: back end.
 
 ## Algorithms
 The used algorithms are presented in the picture below.
