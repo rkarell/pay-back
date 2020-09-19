@@ -48,12 +48,13 @@
     <Folder Include="app\static\" />
     <Folder Include="app\static\app\" />
     <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
     <Folder Include="PayBack" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="app\static\app\index.js" />
-    <Content Include="app\templates\index.html" />
+    <Content Include="app\templates\app\index.html" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
