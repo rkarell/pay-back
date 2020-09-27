@@ -18,7 +18,7 @@ $(document).ready(function () {
     $("#solve").click(function () {
         const csrftoken = getCookie('csrftoken');
         $.ajax({
-            url: "/payback/solve/",
+            url: "/solve/",
             type: "POST",
             headers: { "X-CSRFToken": csrftoken },
             data: JSON.stringify({
