@@ -144,6 +144,7 @@ class Debt():
             if self.amount < 0:
                 self.swap()
 
+    # When merging two debts, if the resulting debt is negative, this function is used to swap the creditor and debtor, so that the sum of debt is always positive
     def swap(self):
         temp = self.debtFrom
         self.debtFrom = self.debtTo

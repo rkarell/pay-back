@@ -14,6 +14,9 @@ function getCookie(name) {
     return cookieValue;
 }
 
+// Sends the data (the transactions) that a user has written in the textarea to the server.
+// Then waits for the response and shows the results.
+// TODO: What if the request fails?
 $(document).ready(function () {
     $("#solve").click(function () {
         const csrftoken = getCookie('csrftoken');
