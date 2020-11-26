@@ -4,13 +4,13 @@ A web application to optimize the transactions when paying back debts.
 ## Background
 When using applications that help you share bills, I started to wonder the algorithms used to optimize the problem. I thought it would be a nice brain-teaser to figure it out and so I took my shot at the case.
 
-Originally, I created an app to just test the designed algorithms but ended up turning it into a web application for demonstration purposes. It lacks a proper user interface, which reflects my current interests: back end.
+Originally, I created a CLI application to just test the designed algorithms but ended up turning it into a web application for demonstration purposes. It lacks a proper user interface, which reflects my current interests: back end.
 
 ## Algorithms
 The algorithms used to optimize the debts are presented in the picture below.
 ![Algorithms](media/algorithms.png)
 
-## Relevant data structures
+## The most relevant classes
 ##### Transaction
 Represents one transaction containing attributes for the buyer, the participants, the total amount and the share for each participant (buyer automatically participates in the purchase and the share is always the same for each participant)
 
@@ -26,12 +26,12 @@ A list of **debt** objects containing the algorithms for optimizing the actual p
 Participants are stored as simple strings in the attributes of **debt** and **transaction** objects
 
 ## Program operation principle
-The UI is simple and used only to input transactions as text on separate rows (sent to the server with POST request). First, the transactions are parsed and validated. Based on the transactions, debts between each two people are calculated. Then above-mentioned algorithms are applied. They reduce the amount of debts in a way that each participant still has to pay the same amount. In the end, the resulting debts are returned to the client.
+The UI is simple and used only to input transactions as text on separate rows (sent to the server with POST request). On the server side, the transactions are first parsed and validated. Based on the transactions, debts between each two people are calculated. Then above-mentioned algorithms are applied. They reduce the amount of debts in a way that each participant still gets the correct recompense. In the end, the resulting debts are returned to the client.
 
 ## Framework
 Django
 
 ## Additional notes
-Time complexity of the algorithms is poor in terms of the number of participants. However, in the context of this kind of software it should not be a problem.
+Time complexity of the algorithms is poor in terms of the number of participants. However, in the context of this kind of software, it should not be a problem.
 
 The data related to debts is basically a directed graph. A library for graphs could have been used to implement it.
