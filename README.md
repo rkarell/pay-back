@@ -4,7 +4,7 @@ A web application to optimize the transactions when paying back debts.
 ## Background
 When using applications that help you share bills, I started to wonder the algorithms used to optimize the problem. I thought it would be a nice brain-teaser to figure it out and so I took my shot at the case.
 
-Originally, I created a CLI application to just test the designed algorithms but ended up turning it into a web application for demonstration purposes. It lacks a proper user interface, which reflects my current interests: back end.
+Originally, I created a CLI application to just test the designed algorithms but ended up turning it into a web application for demonstration purposes. It still lacks a proper user interface.
 
 ## Algorithms
 The algorithms used to optimize the debts are presented in the picture below.
